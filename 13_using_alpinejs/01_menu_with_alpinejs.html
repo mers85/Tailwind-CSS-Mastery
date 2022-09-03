@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+      .shadow-new {
+        box-shadow: rgb(85, 91, 255) 0px 0px 3px,
+        rgb(31, 193, 27) 0px 0px 0px 6px, 
+        rgb(255, 217, 19) 0px 0px 0px 9px, 
+        rgb(255, 156, 85) 0px 0px 0px 12px, 
+        rgb(255, 85, 85) 0px 0px 0px 15px
+      }
+  </style>
+  <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+  <title>Tailwind css mastery</title>
+</head>
+<body class="debug-screens">
+  <div class="bg-gradient-to-tr from-white to-gray-200">
+    <!-- left square decoration -->
+    <div class="absolute top-5 left-5">
+      <div class="w-32 h-32 absolute top-5 bg-gradient-to-br from-red-100 to-red-200 opacity-40 md:w-44 md:h-44"></div>
+      <div class="w-32 h-32 absolute left-10 top-10 bg-gradient-to-br from-green-100 to-green-200 opacity-40 md:w-44 md:h-44"></div>
+      <div class="w-32 h-32 absolute left-20 top-0 bg-gradient-to-br from-purple-100  to-purple-200 opacity-40 md:w-44 md:h-44"></div>
+    </div>
+
+    <!-- Header and Navigation starts -->
+    <section class="text-gray-700 border-b border-gray-200">
+      <div 
+        class="container mx-auto md:flex md:flex-row md:items-center md:justify-between p-2 lg:p-5"
+        x-data="{isShowing: false}"
+      > 
+        <!-- left header section -->
+        <div class="flex items-center justify-between">
+          <a href="#" class="z-10">
+            <span class="font-bold text-sm lg:text-xl text-green-700 tracking-wider">tailwindcss mastery</span>
+          </a>
+          <button @click="isShowing = !isShowing" class="md:hidden">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke-width="1.5" 
+              stroke="currentColor" 
+              class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>            
+          </button>
+        </div>
+
+        <!-- Right header section -->
+        <div class="pt-4 md:pt-0 md:!flex md:items-center md:ml-auto z-10 relative"  
+        x-show="isShowing" 
+        @click.away="isShowing = false"
+        >
+          <nav class="text-sm flex flex-col md:flex-row space-y-3 item-start md:space-x-2 md:space-y-0 lg:text-base lg:justify-center lg:items-center lg:space-x-4 lg:space-y-0">
+            <a href="" class="hover:text-gray-900 ">About</a>
+            <a href="" class="hover:text-gray-900 ">What You'll learn</a>
+            <a href="" class="hover:text-gray-900 ">Pricing</a>
+            <a href="" class="hover:text-gray-900 ">FAQ</a>
+          </nav>
+          <button class="inline-flex items-center text-sm lg:text-base bg-green-200 hover:bg-green-100 text-green-700 hover:text-green-600 shadow hover:shadow-md px-3 py-1 ml-0 md:ml-4 mt-4 md:mt-0 rounded transition duration-500 z-10">Get the course
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 t-1 ml-1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+            
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section starts -->
+    <section>
+      <!-- Main container -->
+      <div class="container relative mx-auto mt-10 sm:mt-0">
+        <!-- Left sub container -->
+        <div class="relative sm:absolute xl:top-56 md:top-36 sm:top-20 px-4 lg:px-0 left-0 sm:w-1/2 z-30">
+          <h1 class="font-black text-4xl leading-none tracking-wider py-1 mb-2 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 lg:text-6xl xl:text-7xl">tailwindcss <br class="hidden sm:block" />mastery</h1>
+          <p class="text-gray-600 text-sm mb-4 sm:mb-0  md:text-base">
+            Make good looking website quickly.<br class="hidden sm:block"/> All with using tailwind css classes.
+          </p>
+        </div>
+
+        <!-- Right sub conatiner -->
+
+        <div class="float-none sm:float-right relative sm:w-1/2 lg:w-2/3">
+          <h3 class="font-black text-blue-500  absolute right-0 z-30 transform rotate-90 hidden lg:block xl:top-56 lg:top-44 xl:text-4xl">up to 99%</h3>
+          <div 
+          class="absolute left-0 bottom-0 w-full h-16 z-30 flex items-center justify-center mb-16 sm:mb-10 lg:mb-24 xl:mb-32">
+            <span class="bg-black text-white hover:bg-white hover:text-black uppercase font-black cursor-pointer px-6 py-2 rounded-full text-sm transition duration-500  xl:text-2xl ">Get the Course</span>
+         </div>
+        
+       
+          <img src="../images/tail.jpg" alt="tailwindcss mastery" class="absolute top-0 right-0 w-11/12 h-full object-cover z-10 sm:w-full">
+          <div class="bg-gray-500 absolute inset-0 mt-16 -ml-8"></div>
+          <svg
+          class="relative z-20 ml-1 sm:-ml-16"
+          data-name="Capa 1"
+          viewbox="0 0 428.29 298.11"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="1.75" cy="296.36" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="286.99" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="277.62" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="268.26" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="258.89" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="249.53" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="240.16" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="230.8" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="221.43" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="212.06" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="202.7" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="193.33" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="183.97" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="174.6" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="165.23" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="155.87" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="146.5" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="137.14" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="128.13" fill="#24263a" r="1.80"></circle>
+          <circle cx="1.75" cy="118.50" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="296.36" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="286.99" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="277.62" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="268.26" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="258.89" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="249.53" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="240.16" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="230.8" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="221.43" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="212.06" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="202.7" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="193.33" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="183.97" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="174.6" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="165.23" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="155.87" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="146.5" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="137.14" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="128.13" fill="#24263a" r="1.80"></circle>
+          <circle cx="10.75" cy="118.50" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="296.36" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="286.99" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="277.62" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="268.26" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="258.89" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="249.53" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="240.16" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="230.8" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="221.43" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="212.06" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="202.7" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="193.33" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="183.97" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="174.6" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="165.23" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="155.87" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="146.5" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="137.14" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="128.13" fill="#24263a" r="1.80"></circle>
+          <circle cx="19.82" cy="118.50" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="296.36" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="286.99" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="277.62" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="268.26" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="258.89" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="249.53" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="240.16" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="230.8" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="221.43" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="212.06" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="202.7" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="193.33" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="183.97" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="174.6" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="165.23" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="155.87" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="146.5" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="137.14" fill="#24263a" r="1.80"></circle>
+          <circle cx="28.85" cy="127.60" fill="#24263a" r="1.80" />
+          <circle cx="28.85" cy="118.20" fill="#24263a" r="1.80" />
+          </svg>
+        </div>
+        <div class="clear-both"></div>
+      </div>
+    </section>
+
+    <!-- About me -->
+    <section class="text-gray-700 mt-20">
+      <h2 class="text-4xl lg:text-6xl text-center mb-2 font-bold">
+        Tailwind Video I've Done
+      </h2>
+
+      <!-- Main content div -->
+      <div class="flex flex-col md:flex-row items-center bg-gray-900 p-10">
+
+        <!-- Left about me section -->
+        <div class="flex flex-col items-center md:items-start w-full text-left mb-16 md:mb-0">
+
+          <h1 class="text-3xl lg:text-4xl text-center lg:text-left font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">About me</h1>
+
+          <p class="mt-3 sm:mr-3 lg:mr-0 text-gray-500 max-w-xl xl:leading-relaxed md:text-base">
+            Hey There! My name is Leena Emel and I make videos on Web development. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odit totam vel quaerat veniam corrupti ratione maxime ad eum, perferendis in natus ex cumque a reiciendis eligendi eaque non quo?
+          </p>
+
+        </div>
+
+        <!-- Right about me section -->
+        <div class="relative w-full max-w-xl">
+          <p class="mb-2 text-gray-500 text-base">
+            I did a Tailwind video for my Youtube Channel
+          </p>
+          <iframe 
+            width="560" 
+            height="315"
+            class="w-full md:border-8 md:border-gray-400"
+            src="https://www.youtube.com/embed/yAoLSRbwxL8" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- What you'll learn in this course -->
+    <section>
+      <div class="py-24 bg-gray-200 text-gray-800">
+        <!-- Container div -->
+        <div class="container mx-auto px-10">
+          <!-- Header -->
+          <div class="relative">
+            <h2 class="mb-24 text-4xl lg:text-6xl text-center font-bold text-teal-800">
+              What you'll learn in this course
+            </h2>
+            <div class="absolute h-2 w-1/3 top-0 right-0 bg-gradient-to-r from-teal-500 to-blue-600 transform -translate-y-4"></div>   
+            <div class="absolute h-2 w-1/3 -bottom-2 left-0 bg-gradient-to-r from-blue-500 to-teal-600 transform translate-y-4"></div>
+          </div>
+
+          <!-- Grid area -->
+          <div class="lg:grid grid-cols-6 gap-10 space-y-8 lg:space-y-0">
+
+            <div class="border border-gray-600 shadow-lg col-span-2">
+
+              <div class="flex items-center justify-between p-3 border-b border-gray-600">
+                <h3 class="text-gray-700 font-bold text-lg">
+                  How to use Tailwind Classes
+                </h3>
+                <div class="flex space-x-2">
+                  <div class="w-3 h-2 bg-red-500"></div>
+                  <div class="w-3 h-2 bg-orange-500"></div>
+                  <div class="w-3 h-2 bg-green-500"></div>
+                </div>
+              </div>
+              <p class="p-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse sapiente distinctio sequi! Eaque fugiat explicabo et ipsa natus animi, debitis blanditiis necessitatibus dignissimos repellat nostrum ipsam. Nisi placeat impedit aliquam.</p>
+
+            </div>
+   
+            <div class="border border-gray-600 shadow-lg col-span-2">
+              <h3 class="bg-gray-500 text-gray-200 p-3 font-bold text-lg">Make good looking designs</h3>
+              <p class="p-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse sapiente distinctio sequi! Eaque fugiat explicabo et ipsa natus animi, debitis blanditiis necessitatibus dignissimos repellat nostrum ipsam. Nisi placeat impedit aliquam.</p>
+            </div>
+            
+            <div class="border border-gray-600 shadow-lg col-span-2">
+              <h3 class="bg-gray-500 text-gray-200 p-3 font-bold text-lg">Why Tailwind is different/better</h3>
+              <p class="p-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse sapiente distinctio sequi! Eaque fugiat explicabo et ipsa natus animi, debitis blanditiis necessitatibus dignissimos repellat nostrum ipsam. Nisi placeat impedit aliquam.</p>
+            </div>
+   
+            <div class="border border-gray-600 shadow-lg col-span-3">
+              <h3 class="bg-gray-500 text-gray-200 p-3 font-bold text-lg">How to build this site</h3>
+              <p class="p-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse sapiente distinctio sequi! Eaque fugiat explicabo et ipsa natus animi, debitis blanditiis necessitatibus dignissimos repellat nostrum ipsam. Nisi placeat impedit aliquam.</p>
+            </div>
+   
+            <div class="border border-gray-600 shadow-lg col-span-3">
+              <h3 class="bg-gray-500 text-gray-200 p-3 font-bold text-lg">A fun and methodical process</h3>
+              <p class="p-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse sapiente distinctio sequi! Eaque fugiat explicabo et ipsa natus animi, debitis blanditiis necessitatibus dignissimos repellat nostrum ipsam. Nisi placeat impedit aliquam.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- What we'll build in this course -->
+    <section>
+      <div class="py-24 bg-gray-300-text-700">
+        <!-- Container div -->
+        <div class="container mx-auto px-10">
+          <div class="mb-8 text-center">
+            <h2 class="mb-2 text-4xl lg:text-6xl text-gray-800">
+              What we'll build in this course
+            </h2>
+            <p class="text-lg text-gray-700">
+              These components are things you'll have to create in every project
+            </p>
+          </div>
+          <!-- Grid area -->
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-red-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Buttons</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-green-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Cards</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-blue-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Forms</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-yellow-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Header</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-indigo-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Navigation</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-pink-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Hero</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-pink-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Flex</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-indigo-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Grids</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-yellow-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Newsletter</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-blue-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Pricing Section</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-green-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">FAQ Section</div>
+            </div>
+
+            <div class="bg-gray-100 shadow-lg">
+              <div class="w-1/3 h-10 mt-4 mx-auto flex items-center justify-center rounded-md bg-red-400">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6 text-white" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  >
+                  <path 
+                  stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="p-4 text-center">Responsive</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing section -->
+    <section>
+      <div class="relative bg-cyan-600 text-cyan-200 py-32">
+        <!-- Gray box for the top section -->
+        <div class="absolute top-0 inset-x-0 bg-gray-300 h-48"></div>
+        <!-- Container div -->
+        <div class="relative container mx-auto flex flex-col lg:flex-row px-10 items-center lg:space-x-8 space-y-4 lg:space-y-0">
+          <!-- left box -->
+          <div class="order-2 lg:order-1 pt-16 text-center lg:text-right text-xl space-y-2 lg:w-1/3">
+            <p><strong class="font-bold text-white">XY videos</strong> at a smooth pace</p>
+            <p><strong class="font-bold text-white">AB hours</strong> of learning + building</p>
+            <p><strong class="font-bold text-white">Source code</strong> and Tailwind Playground</p>
+          </div>
+
+          <!-- Pricing box -->
+          <div class="order-1 lg:order-2 bg-white text-gray-800 lg:w-1/3 w-full p-8  text-center space-y-4 transform hover:scale-105 transition-500  shadow-new">
+            <h3 class="text-gray-600 text-center text-lg">Learn Tailwind 
+              <span class="italic">css</span>
+            </h3>
+            <div class="relative mb-8 text-6xl flex flex-grow items-center justify-center">
+              <div>
+                <span class="text-gray-400 line-through mr-3 opacity-50">$19</span>
+                <span class="text-gray-700"><span class="text-gray-500">$</span>9</span>
+              </div>
+            </div>
+            <a href="#" class="block p-3 text-2xl bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-300 text-yellow-700 hover:text-yellow-900 rounded shadow hover:shadow-2xl transition duration-300">Get the course</a>
+          </div>
+
+          <!-- Right box -->
+          <div class="order-3 lg:w-1/3 lg:text-left  text-center pt-16 space-y-2 text-xl">
+            <p>Use teh code in your<strong class="font-bold text-white"> own projects</strong></p>
+            <p>Access to<strong class="font-bold text-white"> Discord</strong></p>
+            <p>Lifetime<strong class="font-bold text-white"> refund guarantee</strong></p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Video list Section -->
+    <section>
+      <div class="py-32 bg-gradient-to-b from-gray-700 to-gray-800">
+        <!-- Container div -->
+        <div class="container mx-auto px-10">
+          <div class="mb-10 text-center space-y-4">
+            <h2 class="text-4xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-white to-green-300 font-bold">
+              The modules/Videos
+            </h2>
+            <p class="text-2xl text-gray-200">
+              9 hours of Tailwind learning in 15 modules and 55 videos
+            </p>
+          </div>
+
+          <div class="max-w-3xl mx-auto text-gray-400">
+            <div class="p-6 bg-gray-800 flex justify-between items-center">
+              <h4 class="text-3xl">Getting Started</h4>
+              <div class="flex space-x-8 text-center text-xl font-bold">
+                <div>
+                  6 <span class="block text-sm font-normal">Videos</span>
+                </div>
+                <div>
+                  33 <span class="block text-sm font-normal">minutes</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="max-w-3xl mx-auto text-gray-400">
+            <div class="p-6 bg-gray-800 opacity-40 flex justify-between items-center">
+              <h4 class="text-3xl">Main concept</h4>
+              <div class="flex space-x-8 text-center text-xl font-bold">
+                <div>
+                  11 <span class="block text-sm font-normal">Videos</span>
+                </div>
+                <div>
+                  67 <span class="block text-sm font-normal">minutes</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="max-w-3xl mx-auto text-gray-400">
+            <div class="p-6 bg-gray-800 flex justify-between items-center">
+              <h4 class="text-3xl">Layout</h4>
+              <div class="flex space-x-8 text-center text-xl font-bold">
+                <div>
+                  4 <span class="block text-sm font-normal">Videos</span>
+                </div>
+                <div>
+                  37 <span class="block text-sm font-normal">minutes</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="text-gray-700">
+      <!-- Container div -->
+      <div class="container mx-auto px-5 py-24">
+        <div class="text-center mb-20">
+          <h1 class="text-2xl sm:text-3xl font-medium text-gray-900 mb-4">
+            Frequently Asked Question
+          </h1>
+          <p class="text-base leading-relaxed lg:w-3/4 xl:w-2/4 mx-auto">
+            The most common question about how our business works and what can do for you
+          </p>
+        </div>
+        <!-- FAQ listing -->
+        <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+          <div class="w-full lg:w-1/2 px-4 py-2">
+            <details class="mb-4">
+              <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
+                How Long is this site live?
+              </summary>
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, molestiae eaque nisi at commodi ea voluptates illum laudantium impedit in exercitationem deserunt velit sint accusamus veniam soluta dicta nemo quibusdam?
+              </span>
+            </details>
+            <details class="mb-4">
+              <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
+                How Long is this site live?
+              </summary>
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, molestiae eaque nisi at commodi ea voluptates illum laudantium impedit in exercitationem deserunt velit sint accusamus veniam soluta dicta nemo quibusdam?
+              </span>
+            </details>
+            <details class="mb-4">
+              <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
+                How Long is this site live?
+              </summary>
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, molestiae eaque nisi at commodi ea voluptates illum laudantium impedit in exercitationem deserunt velit sint accusamus veniam soluta dicta nemo quibusdam?
+              </span>
+            </details>
+          </div>
+
+          <div class="w-full lg:w-1/2 px-4 py-2">
+            <details class="mb-4">
+              <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
+                How Long is this site live?
+              </summary>
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, molestiae eaque nisi at commodi ea voluptates illum laudantium impedit in exercitationem deserunt velit sint accusamus veniam soluta dicta nemo quibusdam?
+              </span>
+            </details>
+            <details class="mb-4">
+              <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
+                How Long is this site live?
+              </summary>
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, molestiae eaque nisi at commodi ea voluptates illum laudantium impedit in exercitationem deserunt velit sint accusamus veniam soluta dicta nemo quibusdam?
+              </span>
+            </details>
+            <details class="mb-4">
+              <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
+                How Long is this site live?
+              </summary>
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, molestiae eaque nisi at commodi ea voluptates illum laudantium impedit in exercitationem deserunt velit sint accusamus veniam soluta dicta nemo quibusdam?
+              </span>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer & Newsletter Section -->
+    <section class="bg-gray-100 p-8">
+      <footer class="flex justify-center px-4 text-gray-900">
+        <!-- Container div -->
+        <div class="container py-6 lg:py-10">
+          <h1 class="text-center text-lg font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+            Get update on this course
+          </h1>
+          <div class="flex justify-center mt-6">
+            <div class="bg-white rounded-full p-1">
+              <div class="flex flex-wrap justify-between md:flex-row px-3">
+                <input 
+                  class="rounded-full m-1 p-2 text-gray-700 text-sm focus:outline-none"
+                  type="email"
+                  placeholder="Enter your email" 
+                />
+                <button class="w-full text-white m-1 p-2 px-5 text-sm bg-gray-800 rounded-full font-semibold uppercase lg:w-auto bg-gradient-to-r from-pink-400 to-indigo-500 hover:from-pink-800 to-inidigo-900">Suscribe</button>
+              </div>
+            </div>
+          </div>
+
+          <hr class="h-px mt-6 bg-gray-700 border-none" />
+
+          <!-- Footer menu -->
+          <div class="flex flex-col items-center justify-between mt-6 md:flex-row">
+            <div>
+              <a href="#" class="text-3xl font-black trackin-tighter bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">tailwindcss mastery</a>
+            </div>
+         
+            <div class="flex mt-4 md:m-0">
+              <div class="-mx-4">
+                <a href="#" class="px-4 text-sm">About</a>
+                <a href="#" class="px-4 text-sm">Blogs</a>
+                <a href="#" class="px-4 text-sm">News</a>
+                <a href="#" class="px-4 text-sm">Contact</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+    </section>
+
+  </div>
+
+</body>
+</html>
